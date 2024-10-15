@@ -1,0 +1,83 @@
+.form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .custom-button {
+    font-size: 16px; /* Increase font size */
+    font-weight: bold; /* Bold text */
+    padding: 10px 20px; /* Add padding for better touch targets */
+    border-radius: 8px; /* Slightly rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+  }
+  
+  /* Submit Button Style */
+  .submit-button {
+    background-color: #3f51b5; /* Primary color */
+    color: white; /* White text */
+  }
+  
+  .submit-button:hover {
+    background-color: #303f9f; /* Darker shade on hover */
+  }
+  
+  /* Generate Graph Button Style */
+  .generate-button {
+    background-color: #ff4081; /* Accent color */
+    color: white; /* White text */
+  }
+  
+  .generate-button:hover {
+    background-color: #f50057; /* Darker shade on hover */
+  }
+  
+  /* Reset Graph Button Style */
+  .reset-button {
+    background-color: #f44336; /* Warning color */
+    color: white; /* White text */
+  }
+  
+  .reset-button:hover {
+    background-color: #d32f2f; /* Darker shade on hover */
+  }
+
+  .site-header {
+    font-size: 2.5em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center align the text */
+    margin: 20px 0; /* Add vertical margins */
+    color: #3f51b5; /* Primary color for text */
+    text-transform: uppercase; /* Uppercase letters */
+    letter-spacing: 2px; /* Increased letter spacing */
+    border-bottom: 2px solid #e0e0e0; /* Bottom border for separation */
+    padding-bottom: 10px; /* Padding for spacing */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+  }
+  
+  .site-header:hover {
+    color: #303f9f; /* Darker shade on hover */
+  }
+
+  .form-field {
+    width: 300px; /* Set the desired width for the form fields */
+    margin: 0 auto; /* Center align the form fields */
+  }
+
+  .form-section {
+    background-color: rgb(183, 189, 104); /* Change this to your desired background color */
+    padding: 20px; /* Add padding for spacing */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+    margin: 20px; /* Add margin around the section */
+  }
+  
+  
+  /* Optional: You can make the form responsive */
+  @media (max-width: 600px) {
+    .form-field {
+      width: 90%; /* Adjust width for smaller screens */
+    }
+  }
+  
+  
+  

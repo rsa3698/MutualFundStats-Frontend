@@ -1,0 +1,78 @@
+<h1 class="site-header">Mutual Fund Stats</h1>
+
+
+<!-- app.component.html -->
+ <div class="form-section">
+  <form [formGroup]="fundForm" (ngSubmit)="onSubmit()">
+    <!-- Fund Type -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Fund Type</mat-label>
+      <mat-select formControlName="fundType" required>
+        <mat-option *ngFor="let fund of fundTypes" [value]="fund">
+          {{ fund }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <!-- Parameter -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Parameter</mat-label>
+      <mat-select formControlName="parameter" required>
+        <mat-option *ngFor="let param of parameters" [value]="param">
+          {{ param }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <!-- Start Date -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Start Date</mat-label>
+      <input matInput [matDatepicker]="startPicker" formControlName="startDate" required />
+      <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+      <mat-datepicker #startPicker></mat-datepicker>
+    </mat-form-field>
+  
+    <!-- End Date -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>End Date</mat-label>
+      <input matInput [matDatepicker]="endPicker" formControlName="endDate" required />
+      <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+      <mat-datepicker #endPicker></mat-datepicker>
+    </mat-form-field>
+  
+    <!-- Button Group -->
+    <div class="button-group">
+      <!-- Submit Button -->
+      <button mat-raised-button class="custom-button submit-button" type="submit" [disabled]="!fundForm.valid">
+        Submit
+      </button>
+    </div>
+  </form>
+ </div>
+
+<br>
+<br>
+<!-- Action Buttons -->
+<div class="action-buttons">
+  <!-- Generate Graph Button -->
+  <button mat-raised-button class="custom-button generate-button" (click)="generateGraph()">
+    Generate Graph
+  </button>
+
+  <!-- Reset Graph Button -->
+  <button mat-raised-button class="custom-button reset-button" (click)="resetGraph()">
+    Reset Graph
+  </button>
+</div>
+
+
+
+<!-- Chart Display -->
+<div *ngIf="chartData.length > 0 && generateStatus">
+  <app-charts
+    [chartData]="chartData"
+    [months]="months"
+    [values]="values"
+    [parameter]="formattedParameter">
+  </app-charts>
+</div>
